@@ -7,3 +7,8 @@ parts:
 - caption: Quantitative analysis labs
   chapters:
   - file: Lab01_Estimating_SNR_and_Resolution_and_basic_image_processing.md
+- caption:  Additional Resources
+  chapters:
+  - file: links
+  - file: bibliography
+  - file: genindex
