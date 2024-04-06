@@ -9,3 +9,10 @@ Segmentation
     - Panoptic Segmentation, it can be defined as a combination of the prior two, because it identifies the object but also classifies them. An example in biology might be detecting all the cells on an image and classifying them as dividing vs not.
 
 ```
+
+<!-- 
+Terms that aren't in the book yet but we know we want to add (anything you type here won't show up in the built book)
+
+Convolution
+
+--->
