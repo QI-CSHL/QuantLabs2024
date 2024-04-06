@@ -2,23 +2,18 @@
 
 *Lab authors: Hunter Elliott & Marcelo Cicconet*
 
-<small>This file last updated 2024-04-01.</small>
+<small>This file last updated 2024-04-05.</small>
 
 ---
 
 ## Learning Objectives
 
-- [ ] Get familiar with Fiji
-
-- [ ] Estimate SNR
-
-- [ ] Estimate resolution
-
-- [ ] Reduce noise by filtering
-
-- [ ] Subtract background
-
-- [ ] Detect point sources via LoG
+- Get familiar with Fiji{cite}`Schindelin2012-kk`
+- Estimate SNR
+- Estimate resolution
+- Reduce noise by filtering
+- Subtract background
+- Detect point sources via LoG
 
 Lab Data: [<u>https://bit.ly/qi2023labs</u>](https://bit.ly/qi2023labs)
 
@@ -27,6 +22,10 @@ Lab Data: [<u>https://bit.ly/qi2023labs</u>](https://bit.ly/qi2023labs)
 ## **SNR**
 
 - Open Fiji
+
+```{note}
+Fiji stands for Fiji Is Just ImageJ
+```
 
 - Open the image stack “One point source 67nm pix variable SNR.ome.tif”
   by dragging the image onto Fiji
