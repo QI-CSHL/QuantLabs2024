@@ -10,5 +10,5 @@
 ## Places to learn more (or to learn where to learn more)
 * [bioimagingguide.org](https://www.bioimagingguide.org/) {cite}`Senft2023-zy`
 * [HMS CITE 'favorite references'](https://nic.med.harvard.edu/fav_references/)
-* [Community-developed checklists for publishing images and image analyses](https://www.nature.com/articles/s41592-023-01987-9){cite}`Schmied2024-tl`
+* [Community-developed checklists for publishing images and image analyses](https://www.nature.com/articles/s41592-023-01987-9) {cite}`Schmied2024-tl`
 * [The Images to Knowledge conference](https://www.i2kconference.org/)
