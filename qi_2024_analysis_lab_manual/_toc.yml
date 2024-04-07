@@ -8,6 +8,7 @@ parts:
   chapters:
   - file: Lab01_Estimating_SNR_and_Resolution_and_basic_image_processing.md
   - file: Lab02_Image_Processing_and_Basic_Detection.md
+  - file: Lab03_Image_Correction_and_Intensity_Measurements.md
 - caption:  Additional Resources
   chapters:
   - file: links
