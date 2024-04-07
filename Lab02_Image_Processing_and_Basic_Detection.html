@@ -61,7 +61,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Lab02_Image_Processing_and_Basic_Detection';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Helpful links for now and the future" href="links.html" />
+    <link rel="next" title="Image Correction and Intensity Measurements" href="Lab03_Image_Correction_and_Intensity_Measurements.html" />
     <link rel="prev" title="Estimating SNR &amp; Resolution" href="Lab01_Estimating_SNR_and_Resolution_and_basic_image_processing.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -181,6 +181,7 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Lab01_Estimating_SNR_and_Resolution_and_basic_image_processing.html">Estimating SNR &amp; Resolution</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Image Processing and Basic Segmentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lab03_Image_Correction_and_Intensity_Measurements.html">Image Correction and Intensity Measurements</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional Resources</span></p>
 <ul class="nav bd-sidenav">
@@ -427,9 +428,9 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercises-segmentation"><strong>Bonus Exercises - Segmentation</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercise-encapsulating-all-of-segmentation-into-one-module">Bonus Exercise: Encapsulating all of segmentation into one module</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercise-encapsulating-all-of-segmentation-into-one-module">Bonus Exercise: Encapsulating all of <span class="xref std std-term">segmentation</span> into one module</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercise-using-seeded-watershed-to-build-cells-from-nuclei">Bonus Exercise: Using seeded watershed to build Cells from Nuclei</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#even-harder-segmentation">Even harder segmentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#even-harder-segmentation">Even harder <span class="xref std std-term">segmentation</span></a></li>
 </ul>
 </li>
 </ul>
@@ -454,7 +455,7 @@ document.write(`
 <li><p>Experimenting with filtering</p></li>
 <li><p>Get experience with CellProfiler<span id="id1"><sup><a class="reference internal" href="bibliography.html#id5" title="David R Stirling, Madison J Swain-Bowden, Alice M Lucas, Anne E Carpenter, Beth A Cimini, and Allen Goodman. CellProfiler 4: improvements in speed, utility and usability. BMC Bioinformatics, 22(1):433, September 2021.">2</a></sup></span></p></li>
 <li><p>Bonus: Detecting edges and ridges</p></li>
-<li><p>Bonus: Using encapsulated segmentation modules in CellProfiler</p></li>
+<li><p>Bonus: Using encapsulated <a class="reference internal" href="glossary.html#term-Segmentation"><span class="xref std std-term">segmentation</span></a> modules in CellProfiler</p></li>
 </ul>
 <p>Lab Data: <a class="reference external" href="https://tinyurl.com/qi2024labs"><u>https://tinyurl.com/qi2024labs</u></a></p>
 </section>
@@ -546,7 +547,7 @@ your edge detector succeed? Where did it fail?</p></li>
 <hr class="docutils" />
 <section id="basic-segmentation">
 <h2><strong>Basic Segmentation</strong><a class="headerlink" href="#basic-segmentation" title="Link to this heading">#</a></h2>
-<p>As discussed in lecture, classical segmentation typically consists of a stereotyped set of steps</p>
+<p>As discussed in lecture, classical <a class="reference internal" href="glossary.html#term-Segmentation"><span class="xref std std-term">segmentation</span></a> typically consists of a stereotyped set of steps</p>
 <ol class="arabic simple">
 <li><p>Smoothing</p></li>
 <li><p>Thresholding</p></li>
@@ -555,7 +556,7 @@ your edge detector succeed? Where did it fail?</p></li>
 <li><p>Watershed</p></li>
 <li><p>Filling holes in detected objects</p></li>
 </ol>
-<p>Here, we will demonstrate all these steps in CellProfiler, and let you play with how the parameters you choose to see how they affect the segmentation you get.</p>
+<p>Here, we will demonstrate all these steps in CellProfiler, and let you play with how the parameters you choose to see how they affect the <a class="reference internal" href="glossary.html#term-Segmentation"><span class="xref std std-term">segmentation</span></a> you get.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>There are two main ways to move around in CellProfiler once in test mode - keep</p>
@@ -573,7 +574,7 @@ your edge detector succeed? Where did it fail?</p></li>
 <li><p>This will load 3 sets of images, each with a DAPI image and and actin image</p></li>
 </ul>
 </li>
-<li><p>Load the <code class="docutils literal notranslate"><span class="pre">basic_segmentation.cppipe</span></code> folder into the pipeline panel as above</p></li>
+<li><p>Load the <code class="docutils literal notranslate"><span class="pre">basic_{term}</span></code>segmentation<code class="docutils literal notranslate"><span class="pre">.cppipe</span></code> folder into the pipeline panel as above</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -625,7 +626,7 @@ your edge detector succeed? Where did it fail?</p></li>
 <section id="evaluate-your-performance-across-multiple-images">
 <h3>Evaluate your performance across multiple images<a class="headerlink" href="#evaluate-your-performance-across-multiple-images" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>It is <strong><em>critical</em></strong> when doing segmentation to evaluate your objects against your raw images - otherwise, you cannot be certain your preprocessing steps have not introduced errors. Run the <code class="docutils literal notranslate"><span class="pre">OverlayOutlines</span></code> module to see how you did.</p>
+<li><p>It is <strong><em>critical</em></strong> when doing <a class="reference internal" href="glossary.html#term-Segmentation"><span class="xref std std-term">segmentation</span></a> to evaluate your objects against your raw images - otherwise, you cannot be certain your preprocessing steps have not introduced errors. Run the <code class="docutils literal notranslate"><span class="pre">OverlayOutlines</span></code> module to see how you did.</p>
 <ul>
 <li><p>If not well, where do you think you need to make changes?</p></li>
 </ul>
@@ -643,7 +644,7 @@ your edge detector succeed? Where did it fail?</p></li>
 </ul>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>How do you know when your segmentation is “good enough”? It’s a SUPER common but a very complicated question! You can check out <a class="reference external" href="https://zenodo.org/doi/10.5281/zenodo.10498984">this blog post</a> for one attempte at helping come up with a set of rules for making that decision.</p>
+<p>How do you know when your <a class="reference internal" href="glossary.html#term-Segmentation"><span class="xref std std-term">segmentation</span></a> is “good enough”? It’s a SUPER common but a very complicated question! You can check out <a class="reference external" href="https://zenodo.org/doi/10.5281/zenodo.10498984">this blog post</a> for one attempte at helping come up with a set of rules for making that decision.</p>
 </div>
 </section>
 </section>
@@ -732,9 +733,9 @@ injection site, and the autofluorescence of the cell bodies in green.
 <section id="bonus-exercises-segmentation">
 <h2><strong>Bonus Exercises - Segmentation</strong><a class="headerlink" href="#bonus-exercises-segmentation" title="Link to this heading">#</a></h2>
 <section id="bonus-exercise-encapsulating-all-of-segmentation-into-one-module">
-<h3>Bonus Exercise: Encapsulating all of segmentation into one module<a class="headerlink" href="#bonus-exercise-encapsulating-all-of-segmentation-into-one-module" title="Link to this heading">#</a></h3>
+<h3>Bonus Exercise: Encapsulating all of <a class="reference internal" href="glossary.html#term-Segmentation"><span class="xref std std-term">segmentation</span></a> into one module<a class="headerlink" href="#bonus-exercise-encapsulating-all-of-segmentation-into-one-module" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>At the end of your segmentation piepeline, you’ll see two modules that are there but inactive - they have an empty checkbox <a class="reference internal" href="_images/InactivatedModule.png"><img alt="_images/InactivatedModule.png" src="_images/InactivatedModule.png" style="height: 20px;" /></a> . Click this box to enable the <code class="docutils literal notranslate"><span class="pre">IdentifyPrimaryObjects</span></code> module - it should now look like this: <a class="reference internal" href="_images/Check.png"><img alt="_images/Check.png" src="_images/Check.png" style="height: 20px;" /></a></p></li>
+<li><p>At the end of your <a class="reference internal" href="glossary.html#term-Segmentation"><span class="xref std std-term">segmentation</span></a> piepeline, you’ll see two modules that are there but inactive - they have an empty checkbox <a class="reference internal" href="_images/InactivatedModule.png"><img alt="_images/InactivatedModule.png" src="_images/InactivatedModule.png" style="height: 20px;" /></a> . Click this box to enable the <code class="docutils literal notranslate"><span class="pre">IdentifyPrimaryObjects</span></code> module - it should now look like this: <a class="reference internal" href="_images/Check.png"><img alt="_images/Check.png" src="_images/Check.png" style="height: 20px;" /></a></p></li>
 <li><p>Run the IdentifyPrimaryObjects module - how does it do at identifying your nuclei directly from the DNA image?</p></li>
 <li><p>Under the hood, IdentifyPrimaryObjects is doing all the steps we previously did, plus some filtering out of objects based on criteria you set (like whether they touch the edge). Can you <code class="docutils literal notranslate"><span class="pre">Identify</span></code> (😉) which setting corresponds to each of our previous steps?</p></li>
 </ul>
@@ -747,19 +748,19 @@ injection site, and the autofluorescence of the cell bodies in green.
 <h3>Bonus Exercise: Using seeded watershed to build Cells from Nuclei<a class="headerlink" href="#bonus-exercise-using-seeded-watershed-to-build-cells-from-nuclei" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>After you’ve enabled IdentifyPrimaryObjects, you can also enable IdentifySecondaryObjects, which is designed to take an initial, smaller, internal object (nearly always a nucleus) and build a larger object around it (nearly always a cell). Enable and run this module.</p></li>
-<li><p>What settings correspond to our segmentation steps, as in IdentifyPrimary?</p></li>
+<li><p>What settings correspond to our <a class="reference internal" href="glossary.html#term-Segmentation"><span class="xref std std-term">segmentation</span></a> steps, as in IdentifyPrimary?</p></li>
 <li><p>Are there any settings that are new? Click the help button (<a class="reference internal" href="_images/Info.png"><img alt="_images/Info.png" src="_images/Info.png" style="height: 25px;" /></a>) to learn about what these do and how they work.</p></li>
 </ul>
 </section>
 <section id="even-harder-segmentation">
-<h3>Even harder segmentation<a class="headerlink" href="#even-harder-segmentation" title="Link to this heading">#</a></h3>
+<h3>Even harder <a class="reference internal" href="glossary.html#term-Segmentation"><span class="xref std std-term">segmentation</span></a><a class="headerlink" href="#even-harder-segmentation" title="Link to this heading">#</a></h3>
 <p>Nuclei are relatively easy to segment relative to cells - they are bright, fairly uniform, and often reasonably well spaced.
-How well can conventional segmentation work on cells, and how easily can it be done?</p>
+How well can conventional <a class="reference internal" href="glossary.html#term-Segmentation"><span class="xref std std-term">segmentation</span></a> work on cells, and how easily can it be done?</p>
 <ul class="simple">
 <li><p>Download the <code class="docutils literal notranslate"><span class="pre">DL4MIA/hard/train</span></code> <a class="reference external" href="https://tinyurl.com/qi2024labs"><u>https://tinyurl.com/qi2024labs</u></a></p></li>
 <li><p>Start a new CellProfiler project (or open a new CellProfiler window) and drag and drop that folder of images into the Images panel</p></li>
-<li><p>Drag and drop the <code class="docutils literal notranslate"><span class="pre">advanced_untuned.cppipe</span></code> file into the CellProfiler pipeline panel. Other than the input module settings, no segmentation settings have been tuned at all in this pipeline.</p></li>
-<li><p>Try to create an accurate segmentation of these cells - you will want to turn the advanced settings on. How well can you do? What settings seem to make the most difference?</p></li>
+<li><p>Drag and drop the <code class="docutils literal notranslate"><span class="pre">advanced_untuned.cppipe</span></code> file into the CellProfiler pipeline panel. Other than the input module settings, no <a class="reference internal" href="glossary.html#term-Segmentation"><span class="xref std std-term">segmentation</span></a> settings have been tuned at all in this pipeline.</p></li>
+<li><p>Try to create an accurate <a class="reference internal" href="glossary.html#term-Segmentation"><span class="xref std std-term">segmentation</span></a> of these cells - you will want to turn the advanced settings on. How well can you do? What settings seem to make the most difference?</p></li>
 </ul>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
@@ -810,11 +811,11 @@ How well can conventional segmentation work on cells, and how easily can it be d
       </div>
     </a>
     <a class="right-next"
-       href="links.html"
+       href="Lab03_Image_Correction_and_Intensity_Measurements.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Helpful links for now and the future</p>
+        <p class="prev-next-title">Image Correction and Intensity Measurements</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -862,9 +863,9 @@ How well can conventional segmentation work on cells, and how easily can it be d
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercises-segmentation"><strong>Bonus Exercises - Segmentation</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercise-encapsulating-all-of-segmentation-into-one-module">Bonus Exercise: Encapsulating all of segmentation into one module</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercise-encapsulating-all-of-segmentation-into-one-module">Bonus Exercise: Encapsulating all of <span class="xref std std-term">segmentation</span> into one module</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercise-using-seeded-watershed-to-build-cells-from-nuclei">Bonus Exercise: Using seeded watershed to build Cells from Nuclei</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#even-harder-segmentation">Even harder segmentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#even-harder-segmentation">Even harder <span class="xref std std-term">segmentation</span></a></li>
 </ul>
 </li>
 </ul>

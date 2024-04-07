@@ -61,6 +61,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Lab03_Image_Correction_and_Intensity_Measurements';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Helpful links for now and the future" href="links.html" />
+    <link rel="prev" title="Image Processing and Basic Segmentation" href="Lab02_Image_Processing_and_Basic_Detection.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -122,8 +124,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -178,9 +178,10 @@
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Quantitative analysis labs</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Lab01_Estimating_SNR_and_Resolution_and_basic_image_processing.html">Estimating SNR &amp; Resolution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Lab02_Image_Processing_and_Basic_Detection.html">Image Processing and Basic Segmentation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Image Correction and Intensity Measurements</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional Resources</span></p>
 <ul class="nav bd-sidenav">
@@ -414,7 +415,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercises-cellprofiler-background-subtraction-and-flatfield-correction-computationally-rescuing-old-data"><strong>Bonus Exercises - CellProfiler Background Subtraction and Flatfield Correction (computationally rescuing old data)</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-1-create-a-flatfield-correction-image-for-each-channel-wait-time-of-about-5-10-minutes-during-run">Pipeline 1 - Create a flatfield correction image for each channel (wait time of about 5-10 minutes during run)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-2-create-a-background-subtraction-image-for-each-channel-wait-time-after-of-about-5-10-minutes-during-run">Pipeline 2 - Create a background subtraction image for each channel (wait time after of about 5-10 minutes during run)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-3-apply-your-corrections-and-then-perform-some-segmentations-and-measurements">Pipeline 3 - Apply your corrections and then perform some segmentations and measurements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-3-apply-your-corrections-and-then-perform-some-segmentations-and-measurements">Pipeline 3 - Apply your corrections and then perform some <span class="xref std std-term">segmentation</span>s and measurements</a></li>
 </ul>
 </li>
 </ul>
@@ -719,8 +720,8 @@ it onto the Fiji toolbar.</p></li>
 <p class="admonition-title">Note</p>
 <p>This exercise contains several “do this and then wait for 5-10 minutes” steps, so you may feel free to do other bonus exercises (like working on macro writing, or a bonus you didn’t yet attempt from previous labs) while you wait.</p>
 </div>
-<p>As you may have intuited after using it, CellProfiler was originally designed for high-content, high-throughput screens (though it certainly can work on single images). Proper image correction is harder and in practice sometimes somewhat different in this context, but still important! <span id="id1"><sup><a class="reference internal" href="bibliography.html#id17" title="S Singh, M-A Bray, T R Jones, and A E Carpenter. Pipeline for illumination correction of images for high-throughput microscopy. J. Microsc., 256(3):231–236, December 2014.">8</a></sup></span></p>
-<p>We’ve provided you some images <span id="id2"><sup><a class="reference internal" href="bibliography.html#id18" title="Sigrun M Gustafsdottir, Vebjorn Ljosa, Katherine L Sokolnicki, J Anthony Wilson, Deepika Walpita, Melissa M Kemp, Kathleen Petri Seiler, Hyman A Carrel, Todd R Golub, Stuart L Schreiber, Paul A Clemons, Anne E Carpenter, and Alykhan F Shamji. Multiplex cytological profiling assay to measure diverse cellular states. PLoS One, 8(12):e80999, December 2013.">9</a></sup></span> from the Broad Bioimage Benchmark Collection <span id="id3"><sup><a class="reference internal" href="bibliography.html#id19" title="Vebjorn Ljosa, Katherine L Sokolnicki, and Anne E Carpenter. Annotated high-throughput microscopy image sets for validation. Nat. Methods, 9(7):637, June 2012.">10</a></sup></span> that have been treated with a set of organelle dyes collectively called Cell Painting. This assay will be discussed later in the course during Beth’s seminar.</p>
+<p>As you may have intuited after using it, CellProfiler was originally designed for high-content, high-throughput screens (though it certainly can work on single images). Proper image correction is harder and in practice sometimes somewhat different in this context, but still important! <span id="id1"><sup><a class="reference internal" href="bibliography.html#id17" title="S Singh, M-A Bray, T R Jones, and A E Carpenter. Pipeline for illumination correction of images for high-throughput microscopy. J. Microsc., 256(3):231–236, December 2014.">5</a></sup></span></p>
+<p>We’ve provided you some images <span id="id2"><sup><a class="reference internal" href="bibliography.html#id18" title="Sigrun M Gustafsdottir, Vebjorn Ljosa, Katherine L Sokolnicki, J Anthony Wilson, Deepika Walpita, Melissa M Kemp, Kathleen Petri Seiler, Hyman A Carrel, Todd R Golub, Stuart L Schreiber, Paul A Clemons, Anne E Carpenter, and Alykhan F Shamji. Multiplex cytological profiling assay to measure diverse cellular states. PLoS One, 8(12):e80999, December 2013.">6</a></sup></span> from the Broad Bioimage Benchmark Collection <span id="id3"><sup><a class="reference internal" href="bibliography.html#id19" title="Vebjorn Ljosa, Katherine L Sokolnicki, and Anne E Carpenter. Annotated high-throughput microscopy image sets for validation. Nat. Methods, 9(7):637, June 2012.">7</a></sup></span> that have been treated with a set of organelle dyes collectively called Cell Painting. This assay will be discussed later in the course during Beth’s seminar.</p>
 <p>Unfortunately, since these images are 10-15 years old, if measured offsets and images to help us calibrate the microscope were made at the time, they’re long since lost. But we can still do <em>some</em> background corrections to help us be more confident interpreting <em>some</em> measurements.</p>
 <div class="admonition-question-for-you admonition">
 <p class="admonition-title">Question for you</p>
@@ -785,10 +786,10 @@ Some possible answers<div class="sd-summary-down docutils">
 </ul>
 </section>
 <section id="pipeline-3-apply-your-corrections-and-then-perform-some-segmentations-and-measurements">
-<h3>Pipeline 3 - Apply your corrections and then perform some segmentations and measurements<a class="headerlink" href="#pipeline-3-apply-your-corrections-and-then-perform-some-segmentations-and-measurements" title="Link to this heading">#</a></h3>
+<h3>Pipeline 3 - Apply your corrections and then perform some <a class="reference internal" href="glossary.html#term-Segmentation"><span class="xref std std-term">segmentation</span></a>s and measurements<a class="headerlink" href="#pipeline-3-apply-your-corrections-and-then-perform-some-segmentations-and-measurements" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Optional-optional - load your new round of correction images into CellProfiler (along with the first round and the raw images), load the <code class="docutils literal notranslate"><span class="pre">03_analysis_time.cppipe</span></code> pipeline, and start analyzing!</p></li>
-<li><p>What do you notice about the segmentation if you switch back and forth between the corrected images (<code class="docutils literal notranslate"><span class="pre">Hoechst</span></code> for nuclei, and <code class="docutils literal notranslate"><span class="pre">Ph_golgi</span></code> for cells, and the uncorrected images <code class="docutils literal notranslate"><span class="pre">OrigHoechst</span></code> and <code class="docutils literal notranslate"><span class="pre">Orig_Ph_golgi</span></code>)?</p>
+<li><p>What do you notice about the <a class="reference internal" href="glossary.html#term-Segmentation"><span class="xref std std-term">segmentation</span></a> if you switch back and forth between the corrected images (<code class="docutils literal notranslate"><span class="pre">Hoechst</span></code> for nuclei, and <code class="docutils literal notranslate"><span class="pre">Ph_golgi</span></code> for cells, and the uncorrected images <code class="docutils literal notranslate"><span class="pre">OrigHoechst</span></code> and <code class="docutils literal notranslate"><span class="pre">Orig_Ph_golgi</span></code>)?</p>
 <ul>
 <li><p>Especially, do you notice anything in the top right of the image?</p></li>
 </ul>
@@ -833,6 +834,24 @@ Some possible answers<div class="sd-summary-down docutils">
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="Lab02_Image_Processing_and_Basic_Detection.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Image Processing and Basic Segmentation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="links.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Helpful links for now and the future</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -864,7 +883,7 @@ Some possible answers<div class="sd-summary-down docutils">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-exercises-cellprofiler-background-subtraction-and-flatfield-correction-computationally-rescuing-old-data"><strong>Bonus Exercises - CellProfiler Background Subtraction and Flatfield Correction (computationally rescuing old data)</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-1-create-a-flatfield-correction-image-for-each-channel-wait-time-of-about-5-10-minutes-during-run">Pipeline 1 - Create a flatfield correction image for each channel (wait time of about 5-10 minutes during run)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-2-create-a-background-subtraction-image-for-each-channel-wait-time-after-of-about-5-10-minutes-during-run">Pipeline 2 - Create a background subtraction image for each channel (wait time after of about 5-10 minutes during run)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-3-apply-your-corrections-and-then-perform-some-segmentations-and-measurements">Pipeline 3 - Apply your corrections and then perform some segmentations and measurements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-3-apply-your-corrections-and-then-perform-some-segmentations-and-measurements">Pipeline 3 - Apply your corrections and then perform some <span class="xref std std-term">segmentation</span>s and measurements</a></li>
 </ul>
 </li>
 </ul>
