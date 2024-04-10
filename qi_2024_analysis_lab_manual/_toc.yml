@@ -11,6 +11,7 @@ parts:
   - file: Lab03_Image_Correction_and_Intensity_Measurements.md
   - file: Lab04_ML-based_Segmentation_and_Classification.md
   - file: Lab05_DL4MIA_Zero_N2V_StarDist_CellPose3.md
+  - file: Lab06_3D_Image_Analysis.md
 - caption:  Additional Resources
   chapters:
   - file: links
